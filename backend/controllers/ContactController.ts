@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { BaseController } from "./BaseController";
 import { IContactService } from "../services/IContactService";
-import { insertContactSchema } from "@shared/schema";
+import { insertContactSchema } from "../../schema";
 
 export class ContactController extends BaseController {
   constructor(private contactService: IContactService) {
