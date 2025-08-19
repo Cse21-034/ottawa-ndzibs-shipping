@@ -7,6 +7,7 @@
 NODE_ENV=production
 DATABASE_URL=your_neon_connection_string
 SESSION_SECRET=generate_random_32_char_string
+FRONTEND_URL=https://your-vercel-app.vercel.app
 ```
 
 ### Frontend (Vercel)

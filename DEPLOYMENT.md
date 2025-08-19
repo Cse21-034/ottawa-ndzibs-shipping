@@ -4,10 +4,12 @@ This guide covers deploying the Ottawa Ndzibs Shipping application using Vercel 
 
 ## Architecture Overview
 
-The application uses a split deployment strategy:
+The application uses a **completely separated** deployment strategy:
 - **Frontend (React)**: Deployed to Vercel for optimal performance and CDN delivery
-- **Backend (Express.js)**: Deployed to Render for reliable API hosting
+- **Backend (Express.js)**: API-only backend deployed to Render (no frontend serving)
 - **Database**: PostgreSQL (Neon serverless recommended for production)
+
+**Important**: The backend serves only API routes in production. Frontend is hosted entirely separately on Vercel.
 
 ## Prerequisites
 
@@ -29,8 +31,11 @@ Set these environment variables in Render:
 NODE_ENV=production
 DATABASE_URL=your_postgresql_connection_string
 SESSION_SECRET=your_secure_session_secret
+FRONTEND_URL=https://your-vercel-app.vercel.app
 PORT=5000
 ```
+
+**Important**: Set `FRONTEND_URL` to your actual Vercel deployment URL for proper CORS configuration.
 
 ### 3. Deploy to Render
 
@@ -50,7 +55,7 @@ PORT=5000
 2. **Configure Service**:
    - **Name**: `ottawa-ndzibs-api`
    - **Runtime**: Node
-   - **Build Command**: `npm install && node build-backend.js`
+   - **Build Command**: `npm install`
    - **Start Command**: `npm start`
    - **Instance Type**: Free tier (or paid for production)
 

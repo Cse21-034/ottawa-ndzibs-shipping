@@ -3,7 +3,13 @@
   "outputDirectory": "dist/public",
   "installCommand": "npm install",
   "framework": null,
-  "env": {
-    "VITE_API_URL": "https://your-backend-url-on-render.onrender.com"
-  }
+  "routes": [
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
 }

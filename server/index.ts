@@ -1,8 +1,20 @@
 import express, { type Request, Response, NextFunction } from "express";
+import cors from "cors";
 import { registerRoutes } from "./routes";
-import { setupVite, serveStatic, log } from "./vite";
+import { setupVite, log } from "./vite";
 
 const app = express();
+
+// CORS configuration for separate frontend deployment
+const corsOptions = {
+  origin: process.env.NODE_ENV === 'production' 
+    ? [process.env.FRONTEND_URL || 'https://your-vercel-app.vercel.app']
+    : ['http://localhost:3000', 'http://localhost:5000', 'http://localhost:5173'],
+  credentials: true,
+  optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -47,19 +59,16 @@ app.use((req, res, next) => {
     throw err;
   });
 
-  // importantly only setup vite in development and after
-  // setting up all the other routes so the catch-all route
-  // doesn't interfere with the other routes
+  // API-only backend - frontend served separately
+  // In development, still serve frontend for local development
   if (app.get("env") === "development") {
     await setupVite(app, server);
-  } else {
-    serveStatic(app);
   }
+  // In production, only serve API routes - frontend hosted separately on Vercel
 
-  // ALWAYS serve the app on the port specified in the environment variable PORT
+  // ALWAYS serve the API on the port specified in the environment variable PORT
   // Other ports are firewalled. Default to 5000 if not specified.
-  // this serves both the API and the client.
-  // It is the only port that is not firewalled.
+  // This serves only the API - frontend is hosted separately.
   const port = parseInt(process.env.PORT || '5000', 10);
   server.listen({
     port,
