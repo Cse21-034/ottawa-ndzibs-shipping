@@ -1,0 +1,106 @@
+Prompt to Build a Professional Website for Ottawa Ndzibs Shipping
+
+Company Overview:
+Ottawa Ndzibs Shipping is a trusted logistics and freight forwarding company specializing in shipping goods from China 🇨🇳 to Botswana 🇧🇼 via sea and air freight. They offer secure, reliable, and hassle-free shipping solutions for individuals and businesses.
+
+Website Goals:
+
+Showcase services and pricing for sea and air shipping from China to Botswana.
+
+Provide clear contact information and office location.
+
+Allow customers to book shipments and inquire about services.
+
+Build credibility and trust through testimonials, past shipments, and clear service descriptions.
+
+Mobile-friendly, modern, and professional design.
+
+Website Sections & Content:
+
+Hero Section:
+
+Headline: “Reliable Shipping from China to Botswana 🇨🇳➡️🇧🇼”
+
+Subheadline: “Secure, fast, and hassle-free sea & air freight services. Book your space today!”
+
+Call-to-Action Buttons: “Reserve Your Shipment” | “Contact Us”
+
+Visuals: Shipping containers, cargo ship, or air cargo imagery.
+
+About Us:
+
+Text: Ottawa Ndzibs Shipping provides safe and dependable sea and air freight services from China to Botswana. With years of experience, we ensure smooth customs clearance, cargo safety, and competitive pricing.
+
+Optional: Image of the team or office.
+
+Services Section:
+
+Sea Freight: Highlight next shipping date, e.g., “Next sea shipment: 25 August 2025”
+
+Air Freight: Weekly air shipments, ready for collection at Phase 2, Gaborone.
+
+Special Handling: Furniture, electronics, beauty products, textiles, small packages.
+
+Include icons for each service for visual appeal.
+
+Pricing Section:
+
+Furniture, décor, building items – P4500/CBM
+
+Hair, cosmetics, skincare – P4900/CBM
+
+Electronics & electrical goods – P5000/CBM
+
+Textiles & non-branded clothing – P5200/CBM
+
+Smaller goods (by weight) – P90/kg + P150 Handling Fee
+
+Optional: “Request a Quote” button.
+
+How It Works / Process:
+
+Step 1: Contact via WhatsApp, phone, or email.
+
+Step 2: Provide shipment details and reserve space.
+
+Step 3: Goods loaded in China and shipped to Botswana.
+
+Step 4: Smooth customs clearance and delivery.
+
+Testimonials / Success Stories:
+
+Highlight past shipments and client messages, e.g., “30 June Container Successfully Loaded from China to Botswana!”
+
+Contact Section:
+
+Phone/WhatsApp: +267 72951666 / +267 73133989
+
+Email: ottiegosalamang@gmail.com
+
+Office: Plot 19376, Phase 2, Gaborone – Office 5
+
+Optional: Google Maps embed for directions.
+
+CTA Banner:
+
+Text: “Reserve your shipment now – limited slots available!”
+
+Button: “Book Your Shipment”
+
+Design Notes:
+
+Colors: Professional, trust-inspiring palette (blues, whites, subtle greens).
+
+Mobile-first design for easy WhatsApp booking.
+
+Include social proof icons (WhatsApp, email, maps).
+
+Easy navigation: Home | About | Services | Pricing | Contact | Book Now
+
+Extra Features (Optional):
+
+Live booking form for shipments.
+
+FAQ section for common questions (e.g., car shipping, agent support).
+
+News/Updates section for latest shipping dates and container arrivals.
