@@ -1,0 +1,41 @@
+{
+  "name": "ottawa-ndzibs-backend",
+  "version": "1.0.0",
+  "description": "Backend API for Ottawa Ndzibs Shipping Company",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "deploy:render": "npm run build && npm start"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^0.9.0",
+    "connect-pg-simple": "^9.0.1",
+    "drizzle-orm": "^0.30.10",
+    "drizzle-zod": "^0.5.1",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "memorystore": "^1.6.7",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
+    "zod": "^3.23.8",
+    "zod-validation-error": "^3.3.0",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "@types/connect-pg-simple": "^7.0.3",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/express-session": "^1.18.0",
+    "@types/node": "^20.12.12",
+    "@types/passport": "^1.0.16",
+    "@types/passport-local": "^1.0.38",
+    "tsx": "^4.10.5",
+    "typescript": "^5.4.5"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
