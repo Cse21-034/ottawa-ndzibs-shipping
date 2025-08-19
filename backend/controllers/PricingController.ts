@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { BaseController } from "./BaseController";
 import { IPricingService } from "../services/IPricingService";
-import { insertPricingSchema } from "@shared/schema";
+import { insertPricingSchema } from "../../schema";
 
 export class PricingController extends BaseController {
   constructor(private pricingService: IPricingService) {
