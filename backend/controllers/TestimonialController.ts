@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { BaseController } from "./BaseController";
 import { ITestimonialService } from "../services/ITestimonialService";
-import { insertTestimonialSchema } from "@shared/schema";
+import { insertTestimonialSchema } from "../schema";
 
 export class TestimonialController extends BaseController {
   constructor(private testimonialService: ITestimonialService) {
