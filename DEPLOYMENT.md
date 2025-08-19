@@ -19,7 +19,7 @@ The application uses a split deployment strategy:
 
 ### 1. Prepare Backend for Deployment
 
-The backend is already configured for deployment with the `render.yaml` file.
+The backend is configured for deployment with the `render.yaml` file that builds only the server components.
 
 ### 2. Environment Variables
 
@@ -29,10 +29,19 @@ Set these environment variables in Render:
 NODE_ENV=production
 DATABASE_URL=your_postgresql_connection_string
 SESSION_SECRET=your_secure_session_secret
+PORT=5000
 ```
 
 ### 3. Deploy to Render
 
+#### Option A: Using render.yaml (Recommended)
+1. **Connect Repository**: 
+   - Log into [Render Dashboard](https://dashboard.render.com)
+   - Click "New +" → "Blueprint"
+   - Connect your GitHub repository
+   - Render will automatically detect the `render.yaml` file
+
+#### Option B: Manual Service Creation
 1. **Connect Repository**: 
    - Log into [Render Dashboard](https://dashboard.render.com)
    - Click "New +" → "Web Service"
@@ -41,7 +50,7 @@ SESSION_SECRET=your_secure_session_secret
 2. **Configure Service**:
    - **Name**: `ottawa-ndzibs-api`
    - **Runtime**: Node
-   - **Build Command**: `npm install`
+   - **Build Command**: `npm install && node build-backend.js`
    - **Start Command**: `npm start`
    - **Instance Type**: Free tier (or paid for production)
 
@@ -62,34 +71,17 @@ After deployment, run database migrations:
 
 ### 1. Prepare Frontend Configuration
 
-Create a `vercel.json` file in the project root (already exists):
+The project includes a `vercel.json` configuration that builds only the frontend:
 
 ```json
 {
-  "functions": {
-    "client/src/main.tsx": {
-      "excludeFiles": ["server/**"]
-    }
-  },
-  "builds": [
-    {
-      "src": "client/src/main.tsx",
-      "use": "@vercel/static-build",
-      "config": {
-        "buildCommand": "npm run build",
-        "distDir": "dist/public"
-      }
-    }
-  ],
-  "routes": [
-    {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
-  ]
+  "buildCommand": "vite build",
+  "outputDirectory": "dist/public",
+  "installCommand": "npm install",
+  "framework": null,
+  "env": {
+    "VITE_API_URL": "https://your-backend-url-on-render.onrender.com"
+  }
 }
 ```
 
@@ -109,9 +101,9 @@ VITE_API_URL=https://your-render-app.onrender.com
    - Import your GitHub repository
 
 2. **Configure Project**:
-   - **Framework Preset**: Vite
+   - **Framework Preset**: Other
    - **Root Directory**: `./` (project root)
-   - **Build Command**: `npm run build`
+   - **Build Command**: `vite build` (will use vercel.json config)
    - **Output Directory**: `dist/public`
 
 3. **Set Environment Variables**:
@@ -119,6 +111,14 @@ VITE_API_URL=https://your-render-app.onrender.com
    - Set `VITE_API_URL` to your Render backend URL
 
 4. **Deploy**: Click "Deploy"
+
+### Alternative: Manual Build Commands
+
+If Vercel doesn't detect the configuration correctly, use these manual settings:
+
+- **Build Command**: `npm install && vite build`
+- **Install Command**: `npm install`
+- **Output Directory**: `dist/public`
 
 ## Database Setup (Neon)
 
