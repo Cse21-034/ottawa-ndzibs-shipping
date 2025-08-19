@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { BaseController } from "./BaseController";
 import { IServiceService } from "../services/IServiceService";
-import { insertServiceSchema } from "../../schema";
+import { insertServiceSchema } from "../schema";
 
 export class ServiceController extends BaseController {
   constructor(private serviceService: IServiceService) {
