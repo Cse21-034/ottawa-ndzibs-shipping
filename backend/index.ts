@@ -1,7 +1,7 @@
 import express, { type Request, Response, NextFunction } from "express";
 import cors from "cors";
 import { registerRoutes } from "./routes.js";
-import { initializeDatabase } from "./db/database.js";
+import { initializeDatabase } from "./database.js";
 
 // Simple logger
 function log(message: string, source = "express") {
