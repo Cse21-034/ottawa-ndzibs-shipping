@@ -1,5 +1,5 @@
 import { IStorage } from "../repositories/IStorage";
-import { MemStorage } from "../storage";
+import { DbStorage } from "../DbStorage"; // Import DbStorage instead of MemStorage
 
 // Services
 import { IContentService } from "../services/IContentService";
@@ -39,8 +39,8 @@ export class DIContainer {
   private contactController: ContactController;
 
   private constructor() {
-    // Initialize storage
-    this.storage = new MemStorage();
+    // Initialize storage - now using DbStorage instead of MemStorage
+    this.storage = new DbStorage();
     
     // Initialize services
     this.contentService = new ContentService(this.storage);
